@@ -1,7 +1,7 @@
 <?php
 
 // A utility function to swap two elements
-function swap(&$a, &$b) {
+function swap($a, $b) {
     $t = $a;
     $a = $b;
     $b = $t;
@@ -44,15 +44,7 @@ function quickSort($arr, $low, $high) {
     }
 }
 
-/* Function to print an array */
-function printArray($arr, $size) {
-    for ($i=0; $i < $size; $i++)
-        echo($arr[$i]);
-    echo("\n");
-}
-
 $items = ['Jimmy', 9, 'Tim', 8, 'Reese', 7, 'butts'];
 $n = count($items);
-quickSort($items, 0, $n - 1);
-printf("Sorted array: \n");
-printArray($items, $n);
+$items = quickSort($items, 0, $n - 1);
+print_r($items);
