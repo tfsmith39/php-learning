@@ -36,9 +36,10 @@ function quickSort($arr, $low, $high) {
 
         // Separately sort elements before
         // partition and after partition
-        quickSort($arr, $low, $pi-1);
-        quickSort($arr, $pi+1, $high);
+        $arr = quickSort($arr, $low, $pi-1);
+        $arr = quickSort($arr, $pi+1, $high);
     }
+    return $arr;
 }
 
 $items = ['Jimmy', 9, 'Tim', 8, 'Reese', 7, 'butts'];
